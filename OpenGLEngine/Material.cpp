@@ -1,8 +1,10 @@
 #include "Material.h"
 
-Material::Material(GLuint shaderProgram)
+Material::Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO)
 {
 	this->shaderProgram = shaderProgram;
+	this->colorLght = colorL;
+	this->colorObj = colorO;
 }
 
 Material::~Material()
@@ -11,6 +13,7 @@ Material::~Material()
 
 void Material::Bind(Camera * camera, glm::mat4 worldMatrix)
 {
+	
 	//enable shader
 	//TODO - refactor this binding call to be managed by a RenderManager
 	//       the RenderManager can be in charge of grouping material with same
@@ -42,4 +45,12 @@ void Material::Bind(Camera * camera, glm::mat4 worldMatrix)
 	//TODO - cache this as a private varaible (on init) because the location is same every frame
 	GLuint modelToWorldLoc = glGetUniformLocation(shaderProgram, "modelToWorld");
 	glUniformMatrix4fv(modelToWorldLoc, 1, GL_FALSE, &(worldMatrix[0][0]));
+
+	GLuint colorLamp = glGetUniformLocation(shaderProgram, "lightColor");
+	glUniform3fv(colorLamp,1, &colorLght[0]);
+
+	GLuint colorObject = glGetUniformLocation(shaderProgram, "objectColor");
+	glUniform3fv(colorObject,1, &colorObj[0]);
+
+
 }

@@ -24,7 +24,9 @@ void GameEntity::Update()
 {
 	eulerAngles.y += 0.001f;   //very small increment because we don't have deltaTime
 	worldMatrix = glm::identity<glm::mat4>();
+	worldMatrix = glm::scale(worldMatrix, scale);
 	worldMatrix = glm::translate(worldMatrix, position);
+
 	
 	
 	

@@ -18,6 +18,7 @@ uniform mat4 modelToWorld;
 uniform mat4 viewMatrix;
 uniform mat4 projectionMatrix;
 
+
 //entry point for the vertex shader
 void main(void)
 {

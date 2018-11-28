@@ -13,13 +13,18 @@ private:
 
 	//handle to the shader program
 	GLuint shaderProgram;
+	glm::vec3 colorLght;
+	glm::vec3 colorObj;
+	
+	
+	
 public:
 
 	/// <summary>
 	/// Creates a 'material' for a certain shaderProgram
 	/// </summary>
 	/// <param name="shaderProgram"></param>
-	Material(GLuint shaderProgram);
+	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO);
 
 	/// <summary>
 	/// Destruction
