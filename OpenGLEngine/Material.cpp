@@ -6,11 +6,13 @@ Material::Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO)
 	this->colorLght = colorL;
 	this->colorObj = colorO;
 }
-Material::Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, GLfloat norms[])
+Material::Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, glm::vec3 lightPos)
 {
 	this->shaderProgram = shaderProgram;
 	this->colorLght = colorL;
 	this->colorObj = colorO;
+	this->lightPosition = lightPos;
+	
 }
 
 Material::~Material()
@@ -57,6 +59,9 @@ void Material::Bind(Camera * camera, glm::mat4 worldMatrix)
 
 	GLuint colorObject = glGetUniformLocation(shaderProgram, "objectColor");
 	glUniform3fv(colorObject,1, &colorObj[0]);
+
+	GLuint lightPositionObject = glGetUniformLocation(shaderProgram, "lightPos");
+	glUniform3fv(lightPositionObject, 1, &lightPosition[0]);
 
 	
 

@@ -14,11 +14,11 @@ private:
 	Material* material;
 
 	//TODO - maybe this should be in a transform class?
-	glm::vec3 position;
+	
 	glm::vec3 eulerAngles;
 	glm::vec3 scale;
 
-	glm::mat4 worldMatrix;
+	
 	bool spin;
 public:
 	/// <summary>
@@ -31,7 +31,8 @@ public:
 		glm::vec3 eulerAngles,
 		glm::vec3 scale
 	);
-
+	glm::mat4 worldMatrix;
+	glm::vec3 position;
 	/// <summary>
 	/// Destruction
 	/// </summary>

@@ -18,8 +18,7 @@ private:
 	float yaw;
 	float pitch;
 
-	glm::mat4 viewMatrix;       //cached view matrix
-	glm::mat4 projectionMatrix; //cached projection matrix
+	 //cached projection matrix
 public:
 
 	/// <summary>
@@ -35,6 +34,8 @@ public:
 		float nearZ,
 		float farZ
 	);
+	glm::mat4 viewMatrix;       //cached view matrix
+	glm::mat4 projectionMatrix;
 
 	/// <summary>
 	/// Destruction

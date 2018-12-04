@@ -20,8 +20,9 @@ uniform mat4 modelToWorld;
 uniform mat4 viewMatrix;
 uniform mat4 projectionMatrix;
 
-out vec3 Normal;
 
+out vec3 Normal;
+out vec3 FragPos;
 //entry point for the vertex shader
 void main(void)
 {
@@ -33,6 +34,7 @@ void main(void)
     //apply our camera matrcies to bring it to screen space
     worldPos = viewMatrix * worldPos;
     worldPos = projectionMatrix * worldPos;
-	Normal = aNormal;
+	FragPos = vec3(modelToWorld*vec4(position,1.0));
+	Normal = mat3(transpose(inverse(modelToWorld))) * aNormal;
     gl_Position = worldPos;
 }

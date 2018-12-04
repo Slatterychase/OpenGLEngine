@@ -15,7 +15,7 @@ private:
 	GLuint shaderProgram;
 	glm::vec3 colorLght;
 	glm::vec3 colorObj;
-	GLfloat normals[];
+	glm::vec3 lightPosition;
 	
 	
 	
@@ -26,7 +26,7 @@ public:
 	/// </summary>
 	/// <param name="shaderProgram"></param>
 	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO);
-	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, GLfloat norms[]);
+	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, glm::vec3 lightPos);
 
 	/// <summary>
 	/// Destruction
