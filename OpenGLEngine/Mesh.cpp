@@ -51,9 +51,19 @@ void Mesh::CreateBuffers(GLuint shaderProgram)
 		3,						//count of data (this case we have a vec3 -- which has 3 floats)
 		GL_FLOAT,				//kind of data (as mentioned, this is a float!)
 		GL_FALSE,				//should data be normalized?
-		3 * sizeof(GLfloat),	//stride - how many index to skip ahead to reach more of this data
+		6 * sizeof(GLfloat),	//stride - how many index to skip ahead to reach more of this data
 		(GLvoid*)0);			//offset - how many index to skip to reach first value
 	glEnableVertexAttribArray(attribIndex);	//enable what we just did earlier 
+
+	GLuint normalIndex = glGetAttribLocation(shaderProgram, "aNormal");
+	glVertexAttribPointer(
+		normalIndex,			//index of attribute
+		3,						//count of data (this case we have a vec3 -- which has 3 floats)
+		GL_FLOAT,				//kind of data (as mentioned, this is a float!)
+		GL_FALSE,				//should data be normalized?
+		6 * sizeof(GLfloat),	//stride - how many index to skip ahead to reach more of this data
+		(GLvoid*)0);			//offset - how many index to skip to reach first value
+	glEnableVertexAttribArray(normalIndex);
 
 	//unbind things
 	glBindBuffer(GL_ARRAY_BUFFER, 0);

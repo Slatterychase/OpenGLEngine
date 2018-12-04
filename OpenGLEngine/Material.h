@@ -10,11 +10,12 @@ class Material
 {
 private:
 	//TODO: if you have additional textures to bind, it will go here
-
+	
 	//handle to the shader program
 	GLuint shaderProgram;
 	glm::vec3 colorLght;
 	glm::vec3 colorObj;
+	GLfloat normals[];
 	
 	
 	
@@ -25,6 +26,7 @@ public:
 	/// </summary>
 	/// <param name="shaderProgram"></param>
 	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO);
+	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, GLfloat norms[]);
 
 	/// <summary>
 	/// Destruction

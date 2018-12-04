@@ -7,6 +7,8 @@ This is the vertex shader
 
 // vertex attribute for position (loc = 0)
 in vec3 position;
+in vec3 aNormal;
+
 
 //These are our uniform variables! They are like public static variables but
 //they are nothing like public static variables (lol). The similarity lie in
@@ -18,6 +20,7 @@ uniform mat4 modelToWorld;
 uniform mat4 viewMatrix;
 uniform mat4 projectionMatrix;
 
+out vec3 Normal;
 
 //entry point for the vertex shader
 void main(void)
@@ -30,6 +33,6 @@ void main(void)
     //apply our camera matrcies to bring it to screen space
     worldPos = viewMatrix * worldPos;
     worldPos = projectionMatrix * worldPos;
-
+	Normal = aNormal;
     gl_Position = worldPos;
 }

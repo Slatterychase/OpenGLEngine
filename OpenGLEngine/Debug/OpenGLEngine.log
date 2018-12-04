@@ -1,2 +1,4 @@
-﻿  GameEntity.cpp
+﻿  OpenGLEngine.cpp
+c:\users\slatt\desktop\openglengine\openglengine\material.h(18): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\slatt\desktop\openglengine\openglengine\material.h(18): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
   OpenGLEngine.vcxproj -> C:\Users\slatt\Desktop\OpenGLEngine\Debug\OpenGLEngine.exe
