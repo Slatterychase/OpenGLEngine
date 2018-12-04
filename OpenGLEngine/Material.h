@@ -16,6 +16,11 @@ private:
 	glm::vec3 colorLght;
 	glm::vec3 colorObj;
 	glm::vec3 lightPosition;
+	glm::vec3 cameraPosition;
+	glm::vec3 ambient;
+	glm::vec3 diffuse;
+	glm::vec3 specular;
+	float shininess;
 	
 	
 	
@@ -26,7 +31,7 @@ public:
 	/// </summary>
 	/// <param name="shaderProgram"></param>
 	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO);
-	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, glm::vec3 lightPos);
+	Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, glm::vec3 lightPos, glm::vec3 cameraPos, glm::vec3 amb, glm::vec3 diff, glm::vec3 spec, float shin);
 
 	/// <summary>
 	/// Destruction

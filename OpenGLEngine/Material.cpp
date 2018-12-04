@@ -6,12 +6,17 @@ Material::Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO)
 	this->colorLght = colorL;
 	this->colorObj = colorO;
 }
-Material::Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, glm::vec3 lightPos)
+Material::Material(GLuint shaderProgram, glm::vec3 colorL, glm::vec3 colorO, glm::vec3 lightPos, glm::vec3 cameraPos, glm::vec3 amb, glm::vec3 diff, glm::vec3 spec, float shin)
 {
 	this->shaderProgram = shaderProgram;
 	this->colorLght = colorL;
 	this->colorObj = colorO;
 	this->lightPosition = lightPos;
+	this->cameraPosition = cameraPos;
+	this->ambient = amb;
+	this->diffuse = diff;
+	this->specular = spec;
+	this->shininess = shin;
 	
 }
 
@@ -62,6 +67,23 @@ void Material::Bind(Camera * camera, glm::mat4 worldMatrix)
 
 	GLuint lightPositionObject = glGetUniformLocation(shaderProgram, "lightPos");
 	glUniform3fv(lightPositionObject, 1, &lightPosition[0]);
+
+	GLuint cameraPositionObject = glGetUniformLocation(shaderProgram, "viewPos");
+	glUniform3fv(cameraPositionObject, 1, &cameraPosition[0]);
+
+	GLuint ambientObject = glGetUniformLocation(shaderProgram, "material.ambient");
+	glUniform3fv(ambientObject, 1, &ambient[0]);
+
+	GLuint specularObject = glGetUniformLocation(shaderProgram, "material.specular");
+	glUniform3fv(specularObject, 1, &specular[0]);
+
+	GLuint diffuseObject = glGetUniformLocation(shaderProgram, "material.diffuse");
+	glUniform3fv(diffuseObject, 1, &diffuse[0]);
+
+	GLuint shininessObject = glGetUniformLocation(shaderProgram, "material.shininess");
+	glUniform1f(shininessObject, shininess);
+
+
 
 	
 

@@ -4,7 +4,7 @@
 class Camera
 {
 private:
-	glm::vec3 position;     //position of camera
+	     //position of camera
 	glm::vec3 forward;      //where the camera is facing
 	glm::vec3 up;           //what 'up' is for the camera
 
@@ -36,6 +36,7 @@ public:
 	);
 	glm::mat4 viewMatrix;       //cached view matrix
 	glm::mat4 projectionMatrix;
+	glm::vec3 position;     //position of camera
 
 	/// <summary>
 	/// Destruction
