@@ -162,20 +162,33 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="OpenGLEngine.cpp" />
     <ClCompile Include="shader.cpp" />
+    <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="DynamicShader.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Debug\assets\shaders\fragmentShader.glsl" />
     <None Include="..\Debug\assets\shaders\lightShader.glsl" />
+    <None Include="..\Debug\assets\shaders\skyboxFragment.glsl" />
+    <None Include="..\Debug\assets\shaders\skyboxVertex.glsl" />
     <None Include="..\Debug\assets\shaders\vertexShader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\assets\Skymap\back.png" />
+    <Image Include="..\assets\Skymap\bot.png" />
+    <Image Include="..\assets\Skymap\front.png" />
+    <Image Include="..\assets\Skymap\left.png" />
+    <Image Include="..\assets\Skymap\right.png" />
+    <Image Include="..\assets\Skymap\top.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,6 +16,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{42c772be-3d6a-4357-99d7-13e6de0c32ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Skymap">
+      <UniqueIdentifier>{588c103b-4beb-4904-9e6c-e4f43521f2f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGLEngine.cpp">
@@ -37,6 +40,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,6 +68,12 @@
     <ClInclude Include="shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Debug\assets\shaders\fragmentShader.glsl">
@@ -73,5 +85,31 @@
     <None Include="..\Debug\assets\shaders\lightShader.glsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="..\Debug\assets\shaders\skyboxFragment.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\Debug\assets\shaders\skyboxVertex.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\assets\Skymap\top.png">
+      <Filter>Skymap</Filter>
+    </Image>
+    <Image Include="..\assets\Skymap\back.png">
+      <Filter>Skymap</Filter>
+    </Image>
+    <Image Include="..\assets\Skymap\bot.png">
+      <Filter>Skymap</Filter>
+    </Image>
+    <Image Include="..\assets\Skymap\front.png">
+      <Filter>Skymap</Filter>
+    </Image>
+    <Image Include="..\assets\Skymap\left.png">
+      <Filter>Skymap</Filter>
+    </Image>
+    <Image Include="..\assets\Skymap\right.png">
+      <Filter>Skymap</Filter>
+    </Image>
   </ItemGroup>
 </Project>
